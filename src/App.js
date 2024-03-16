@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Register from "./Component/Auth/Register";
+import OTPVerification from "./Component/Auth/Otpverify";
+import Product from "./Component/Product/Product";
+import DetailsProduct from "./Component/Product/DetailsProduct";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Register />} />
+        <Route path="/verify-otp" element={<OTPVerification />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/productdetails" element={<DetailsProduct />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
