@@ -47,16 +47,16 @@ const Product = () => {
     }
   }
 
-  console.log(productData, tokenData);
 
   useEffect(() => {
     fetchData();
-  }, [])
+  }, []);
 
-  const goToProductDetails =(item) =>{
+
+  const goToProductDetails = (item) => {
     dispatch(addData(item));
     navigate('/productdetails')
-    
+
   }
 
 
@@ -129,7 +129,7 @@ const Product = () => {
           <div className='hotels-container'>
 
             {productData && productData.length > 0 && productData.map((item, ind) =>
-              <div className='hotels' key={ind} onClick={(e)=>goToProductDetails(item)}>
+              <div className='hotels' key={ind} onClick={(e) => goToProductDetails(item)}>
 
                 <div className='hotel-img'>
                   <img src={Object.values(item.images[0])} alt={item.active_plan_id} width="95%" />
